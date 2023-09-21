@@ -14,9 +14,9 @@ class Course < ApplicationRecord
         return enrolled_students
     end
 
-    has_one :prereq,
-        primary_key: :prereq_id,
-        foreign_key: :id,
+    belongs_to :prereq,
+        primary_key: :id,
+        foreign_key: :prereq_id,
         class_name: :Course,
         optional: true
 end
